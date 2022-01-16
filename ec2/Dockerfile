@@ -1,7 +1,6 @@
 # Docker image for serving to EC2, instead of serverless architectures
 
-# python:3.8.12
-ARG BUILD_IMAGE=python@sha256:90e0a08f49f46afa33dc1eed864576f8bea8eac9e33d58a76970211aed85c0d3
+ARG BUILD_IMAGE=python:3.8.12
 FROM ${BUILD_IMAGE}
 
 # Create and set working directory
@@ -17,6 +16,7 @@ RUN groupadd -g $GID -o zai_mlflow && useradd -m -u $UID -g $GID -o -r zai_mlflo
 # Install MLFlow and PostgreSQL client
 RUN pip install mlflow==1.22.*
 RUN pip install psycopg2==2.9.*
+RUN pip install boto3==1.20.*
 
 # Copy entrypoint
 COPY entrypoint.sh ./
