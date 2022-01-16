@@ -1,0 +1,7 @@
+# Docker
+Dockerfile
+.dockerignore
+
+# Zappa (these files are intended as back-ups)
+handler.py
+zappa_settings.py

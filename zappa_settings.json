@@ -1,0 +1,5 @@
+{
+    "production": {
+        "app_function": "wsgi_app.app"
+    }
+}
